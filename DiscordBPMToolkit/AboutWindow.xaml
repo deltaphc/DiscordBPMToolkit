@@ -1,0 +1,50 @@
+﻿<Window x:Class="DiscordBPMToolkit.AboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DiscordBPMToolkit"
+        mc:Ignorable="d"
+        Title="About" Height="600" Width="600"
+        ResizeMode="NoResize"
+        Background="{x:Static SystemColors.ControlBrush}">
+    <Grid Margin="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="0">
+            <TextBlock><Bold>Discord BPM Toolkit</Bold></TextBlock>
+            <TextBlock Name="versionText">version</TextBlock>
+
+            <TextBlock Margin="0 8 0 8">by DeltaPHC</TextBlock>
+        </StackPanel>
+
+        <TabControl Grid.Row="1">
+            <TabItem Header="DiscordBPMToolkit">
+                <TextBox Name="DBTLicense" FontFamily="Consolas" IsReadOnly="True" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" Grid.Row="1"></TextBox>
+            </TabItem>
+            <TabItem Header="Licenses">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Label Grid.Row="0">7-Zip</Label>
+                    <TextBox Name="SevenZipLicense" FontFamily="Consolas" Grid.Row="1" IsReadOnly="True" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"></TextBox>
+                    <Label Grid.Row="2">Node.js</Label>
+                    <TextBox Name="NodeLicense" FontFamily="Consolas" Grid.Row="3" IsReadOnly="True" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"></TextBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        
+
+        <Button Name="closeButton" HorizontalAlignment="Right" Padding="8" Grid.Row="2" IsDefault="True" IsCancel="True" Click="closeButton_Click">Close</Button>
+    </Grid>
+
+</Window>
